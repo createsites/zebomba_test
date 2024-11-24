@@ -1,6 +1,6 @@
 #overlay {
     background-color: rgba(0, 0, 0, .5);
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -89,7 +89,7 @@
 
             .scroll_box {
                 max-height: 261px;
-                overflow-y: scroll;
+                overflow: auto;
             }
 
             table.score {

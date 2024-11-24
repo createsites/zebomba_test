@@ -22,6 +22,23 @@ body main {
   position: relative;
 }
 
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #444;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #333;
+}
+
 main .controls {
   margin-bottom: 19px;
   display: flex;
@@ -153,7 +170,7 @@ main .controls .rating {
 
 #overlay {
   background-color: rgba(0, 0, 0, 0.5);
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -232,7 +249,7 @@ main .controls .rating {
 }
 #overlay #rating .list .scroll_box {
   max-height: 261px;
-  overflow-y: scroll;
+  overflow: auto;
 }
 #overlay #rating .list table.score {
   width: 100%;
