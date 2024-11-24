@@ -1,0 +1,153 @@
+main {
+
+    .controls {
+        margin-bottom: 19px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+
+        .friends {
+            background: url(../img/friends_bg.png) center left repeat-x;
+            height: 63px;
+            display: flex;
+            gap: 5px;
+            align-items: center;
+            margin: 0 19px;
+
+            &:before,
+            &:after {
+                content: '';
+                display: block;
+                width: 19px;
+                height: 63px;
+            }
+
+            &:before {
+                background: url(../img/friends_left.png) center left no-repeat;
+                margin-left: -19px;
+            }
+
+            &:after {
+                background: url(../img/friends_right.png) center left no-repeat;
+                margin-right: -19px;
+            }
+
+            .arrow {
+                display: block;
+                width: 16px;
+                height: 29px;
+                z-index: 10;
+
+                &.left {
+                    background: url(../img/friends_arrow_left.png) 0 0 no-repeat;
+                    margin-left: -13px;
+                }
+
+                &.right {
+                    background: url(../img/friends_arrow_right.png) 0 0 no-repeat;
+                    margin-right: -13px;
+                }
+            }
+
+            #slider {
+                width: 494px;
+                overflow: hidden;
+                height: 100%;
+                display: flex;
+                align-items: center;
+
+                .slider_wrap {
+                    display: flex;
+                    gap: 5px;
+                    position: relative;
+                    right: 0;
+                    transition: right 0.5s ease-in-out;
+
+                    .item {
+                        background: url(../img/friends_block.png) 0 0 no-repeat;
+                        min-width: 50px;
+                        height: 51px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: end;
+                        transition: transform 0.3s ease-in-out;
+                        position: relative;
+
+                        &:before {
+                            content: '';
+                            display: block;
+                            background: url(../img/friends_male.png) 0 0 no-repeat;
+                            width: 28px;
+                            height: 38px;
+                            margin-bottom: 3px;
+                        }
+
+                        &.female:before {
+                            background: url(../img/friends_female.png) 0 0 no-repeat;
+                        }
+
+                        .add {
+                            display: block;
+                            background: url(../img/friends_plus.png) 0 0 no-repeat;
+                            width: 23px;
+                            height: 22px;
+                            position: absolute;
+                            top: -4px;
+                            right: -4px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .chat {
+            background: url(../img/chat_btn.png) 0 0 no-repeat;
+            width: 67px;
+            height: 62px;
+        }
+
+        .univer {
+            height: 67px;
+            background: url(../img/univer_btn_bg.png) center left repeat-x;
+            display: flex;
+            align-items: center;
+            margin: 0 18px;
+            color: #fff;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+            font-size: 24px;
+            font-family: "Cambria";
+            font-weight: 600;
+
+            &:before,
+            &:after {
+                content: '';
+                display: block;
+                width: 18px;
+                height: 67px;
+            }
+
+            &:before {
+                background: url(../img/univer_btn_left.png) center left no-repeat;
+                margin-left: -22px;
+            }
+
+            &:after {
+                background: url(../img/univer_btn_right.png) center left no-repeat;
+                margin-right: -22px;
+            }
+        }
+
+        .message {
+            background: url(../img/message_btn.png) 0 0 no-repeat;
+            width: 68px;
+            height: 64px;
+        }
+
+        .rating {
+            background: url(../img/rating_btn.png) 0 0 no-repeat;
+            width: 66px;
+            height: 61px;
+        }
+    }
+}

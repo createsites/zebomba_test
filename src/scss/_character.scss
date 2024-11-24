@@ -1,0 +1,41 @@
+main {
+    #character {
+        position: absolute;
+        bottom: 121px;
+        left: 434px;
+        opacity: 1;
+        background: url(../img/girl.png) 0 0 no-repeat;
+        width: 21px;
+        height: 69px;
+        transition: opacity 0.5s ease;
+
+        &.hidden {
+            opacity: 0;
+        }
+
+        &.point1 {
+            bottom: 152px;
+            left: 340px;
+        }
+
+        &.point2 {
+            bottom: 111px;
+            left: 266px;
+        }
+
+        &.point3 {
+            bottom: 92px;
+            left: 179px;
+        }
+
+        &.point4 {
+            bottom: 119px;
+            left: 100px;
+        }
+
+        &.point5 {
+            bottom: 183px;
+            left: 113px;
+        }
+    }
+}

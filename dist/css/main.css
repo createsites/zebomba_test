@@ -1,0 +1,316 @@
+@font-face {
+  font-family: "Cambria";
+  font-display: swap;
+  src: url("../fonts/cambriab-webfont.woff") format("woff"), url("../fonts/cambriab-webfont.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+body {
+  margin: 0;
+}
+body button {
+  cursor: pointer;
+  border: 0;
+}
+body main {
+  background: url(../img/bg.jpg) 0 0 no-repeat;
+  width: 980px;
+  height: 630px;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  position: relative;
+}
+
+main .controls {
+  margin-bottom: 19px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+main .controls .friends {
+  background: url(../img/friends_bg.png) center left repeat-x;
+  height: 63px;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  margin: 0 19px;
+}
+main .controls .friends:before, main .controls .friends:after {
+  content: "";
+  display: block;
+  width: 19px;
+  height: 63px;
+}
+main .controls .friends:before {
+  background: url(../img/friends_left.png) center left no-repeat;
+  margin-left: -19px;
+}
+main .controls .friends:after {
+  background: url(../img/friends_right.png) center left no-repeat;
+  margin-right: -19px;
+}
+main .controls .friends .arrow {
+  display: block;
+  width: 16px;
+  height: 29px;
+  z-index: 10;
+}
+main .controls .friends .arrow.left {
+  background: url(../img/friends_arrow_left.png) 0 0 no-repeat;
+  margin-left: -13px;
+}
+main .controls .friends .arrow.right {
+  background: url(../img/friends_arrow_right.png) 0 0 no-repeat;
+  margin-right: -13px;
+}
+main .controls .friends #slider {
+  width: 494px;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+main .controls .friends #slider .slider_wrap {
+  display: flex;
+  gap: 5px;
+  position: relative;
+  right: 0;
+  transition: right 0.5s ease-in-out;
+}
+main .controls .friends #slider .slider_wrap .item {
+  background: url(../img/friends_block.png) 0 0 no-repeat;
+  min-width: 50px;
+  height: 51px;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  transition: transform 0.3s ease-in-out;
+  position: relative;
+}
+main .controls .friends #slider .slider_wrap .item:before {
+  content: "";
+  display: block;
+  background: url(../img/friends_male.png) 0 0 no-repeat;
+  width: 28px;
+  height: 38px;
+  margin-bottom: 3px;
+}
+main .controls .friends #slider .slider_wrap .item.female:before {
+  background: url(../img/friends_female.png) 0 0 no-repeat;
+}
+main .controls .friends #slider .slider_wrap .item .add {
+  display: block;
+  background: url(../img/friends_plus.png) 0 0 no-repeat;
+  width: 23px;
+  height: 22px;
+  position: absolute;
+  top: -4px;
+  right: -4px;
+}
+main .controls .chat {
+  background: url(../img/chat_btn.png) 0 0 no-repeat;
+  width: 67px;
+  height: 62px;
+}
+main .controls .univer {
+  height: 67px;
+  background: url(../img/univer_btn_bg.png) center left repeat-x;
+  display: flex;
+  align-items: center;
+  margin: 0 18px;
+  color: #fff;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  font-size: 24px;
+  font-family: "Cambria";
+  font-weight: 600;
+}
+main .controls .univer:before, main .controls .univer:after {
+  content: "";
+  display: block;
+  width: 18px;
+  height: 67px;
+}
+main .controls .univer:before {
+  background: url(../img/univer_btn_left.png) center left no-repeat;
+  margin-left: -22px;
+}
+main .controls .univer:after {
+  background: url(../img/univer_btn_right.png) center left no-repeat;
+  margin-right: -22px;
+}
+main .controls .message {
+  background: url(../img/message_btn.png) 0 0 no-repeat;
+  width: 68px;
+  height: 64px;
+}
+main .controls .rating {
+  background: url(../img/rating_btn.png) 0 0 no-repeat;
+  width: 66px;
+  height: 61px;
+}
+
+#overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.7s ease;
+}
+#overlay.show {
+  visibility: visible;
+  opacity: 1;
+}
+#overlay #rating {
+  background: radial-gradient(circle, #ce9e6b, #9e6b35);
+  border-radius: 20px;
+  border: 5px solid #8a5e2e;
+  padding: 90px 30px 32px 30px;
+  margin: 50px auto;
+  width: 453px;
+  position: relative;
+  font-family: Arial, sans-serif;
+  top: -550px;
+  transition: top 0.5s ease;
+}
+#overlay #rating.show {
+  top: 10px;
+}
+#overlay #rating .head {
+  position: absolute;
+  top: -16px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+#overlay #rating .head h2 {
+  margin: 0;
+  display: flex;
+}
+#overlay #rating .head h2:before, #overlay #rating .head h2:after {
+  content: "";
+  display: block;
+  width: 18px;
+  height: 33px;
+}
+#overlay #rating .head h2:before {
+  background: url(../img/rating/head_left.png) 0 0 no-repeat;
+}
+#overlay #rating .head h2:after {
+  background: url(../img/rating/head_right.png) 0 0 no-repeat;
+}
+#overlay #rating .head h2 .text {
+  color: #fff;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  background: url(../img/rating/head_bg.png) 0 0 repeat-x;
+  display: flex;
+  align-items: center;
+  min-height: 33px;
+  padding: 0 7px;
+}
+#overlay #rating a.close {
+  display: block;
+  position: absolute;
+  top: 9px;
+  right: 13px;
+  background: url(../img/rating/close.png) 0 0 no-repeat;
+  width: 26px;
+  height: 26px;
+}
+#overlay #rating .list {
+  background-color: #8c5a31;
+  padding: 31px;
+  border-radius: 20px;
+}
+#overlay #rating .list .scroll_box {
+  max-height: 261px;
+  overflow-y: scroll;
+}
+#overlay #rating .list table.score {
+  width: 100%;
+  color: #fff;
+  border-collapse: separate;
+  border-spacing: 0 5px;
+}
+#overlay #rating .list table.score thead {
+  text-align: left;
+}
+#overlay #rating .list table.score thead tr {
+  height: 29px;
+}
+#overlay #rating .list table.score thead tr th {
+  background: url(../img/rating/table_head_bg.png) 0 0 repeat-x;
+  padding: 0;
+}
+#overlay #rating .list table.score thead tr th:first-child {
+  background: url(../img/rating/table_head_left.png) 0 0 no-repeat;
+  width: 16px;
+}
+#overlay #rating .list table.score thead tr th:last-child {
+  background: url(../img/rating/table_head_right.png) 0 0 no-repeat;
+  width: 16px;
+}
+#overlay #rating .list table.score tbody tr {
+  height: 27px;
+}
+#overlay #rating .list table.score tbody tr td {
+  background: url(../img/rating/table_row_bg.png) 0 0 repeat-x;
+  padding: 0;
+  line-height: 11px;
+}
+#overlay #rating .list table.score tbody tr td:first-child {
+  background: url(../img/rating/table_row_left.png) 0 0 no-repeat;
+}
+#overlay #rating .list table.score tbody tr td:last-child {
+  background: url(../img/rating/table_row_right.png) 0 0 no-repeat;
+}
+#overlay #rating .list table.score tbody tr td:nth-child(2) {
+  text-align: center;
+  width: 15%;
+}
+#overlay #rating .list table.score tbody tr.friend td.name {
+  color: #1d3b6f;
+}
+
+main #character {
+  position: absolute;
+  bottom: 121px;
+  left: 434px;
+  opacity: 1;
+  background: url(../img/girl.png) 0 0 no-repeat;
+  width: 21px;
+  height: 69px;
+  transition: opacity 0.5s ease;
+}
+main #character.hidden {
+  opacity: 0;
+}
+main #character.point1 {
+  bottom: 152px;
+  left: 340px;
+}
+main #character.point2 {
+  bottom: 111px;
+  left: 266px;
+}
+main #character.point3 {
+  bottom: 92px;
+  left: 179px;
+}
+main #character.point4 {
+  bottom: 119px;
+  left: 100px;
+}
+main #character.point5 {
+  bottom: 183px;
+  left: 113px;
+}
+/*# sourceMappingURL=main.css.map */

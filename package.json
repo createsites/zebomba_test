@@ -1,0 +1,27 @@
+{
+  "name": "zebomba_test",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Тестовое задание на front-end разработчика",
+  "main": "index.js",
+  "scripts": {
+    "build": "gulp build",
+    "dev": "gulp dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
+    "babel-loader": "^9.2.1",
+    "browser-sync": "^3.0.3",
+    "del": "^8.0.0",
+    "gulp": "^4.0.2",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-webpack": "^1.5.0",
+    "sass": "^1.81.0",
+    "webpack-stream": "^7.0.0"
+  }
+}

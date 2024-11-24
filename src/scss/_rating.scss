@@ -1,0 +1,158 @@
+#overlay {
+    background-color: rgba(0, 0, 0, .5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.7s ease;
+
+    &.show {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    #rating {
+        background: radial-gradient(circle, #ce9e6b, #9e6b35);
+        border-radius: 20px;
+        border: 5px solid #8a5e2e;
+        padding: 90px 30px 32px 30px;
+        margin: 50px auto;
+        width: 453px;
+        position: relative;
+        font-family: Arial, sans-serif;
+        top: -550px;
+        transition: top 0.5s ease;
+
+        &.show {
+            top: 10px;
+        }
+
+        .head {
+            position: absolute;
+            top: -16px;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+
+            h2 {
+                margin: 0;
+                display: flex;
+
+                &:before,
+                &:after {
+                    content: '';
+                    display: block;
+                    width: 18px;
+                    height: 33px;
+                }
+
+                &:before {
+                    background: url(../img/rating/head_left.png) 0 0 no-repeat;
+                }
+
+                &:after {
+                    background: url(../img/rating/head_right.png) 0 0 no-repeat;
+                }
+
+                .text {
+                    color: #fff;
+                    font-weight: bold;
+                    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+                    background: url(../img/rating/head_bg.png) 0 0 repeat-x;
+                    display: flex;
+                    align-items: center;
+                    min-height: 33px;
+                    padding: 0 7px;
+                }
+            }
+        }
+
+        a.close {
+            display: block;
+            position: absolute;
+            top: 9px;
+            right: 13px;
+            background: url(../img/rating/close.png) 0 0 no-repeat;
+            width: 26px;
+            height: 26px;
+        }
+
+        .list {
+            background-color: #8c5a31;
+            padding: 31px;
+            border-radius: 20px;
+
+            .scroll_box {
+                max-height: 261px;
+                overflow-y: scroll;
+            }
+
+            table.score {
+                width: 100%;
+                color: #fff;
+                border-collapse: separate;
+                border-spacing: 0 5px;
+
+                thead {
+                    text-align: left;
+
+                    tr {
+                        height: 29px;
+
+                        th {
+                            background: url(../img/rating/table_head_bg.png) 0 0 repeat-x;
+                            padding: 0;
+
+                            &:first-child {
+                                background: url(../img/rating/table_head_left.png) 0 0 no-repeat;
+                                width: 16px;
+                            }
+
+                            &:last-child {
+                                background: url(../img/rating/table_head_right.png) 0 0 no-repeat;
+                                width: 16px;
+                            }
+                        }
+                    }
+                }
+
+                tbody {
+
+                    tr {
+                        height: 27px;
+
+                        td {
+                            background: url(../img/rating/table_row_bg.png) 0 0 repeat-x;
+                            padding: 0;
+                            line-height: 11px;
+
+                            &:first-child {
+                                background: url(../img/rating/table_row_left.png) 0 0 no-repeat;
+                            }
+
+                            &:last-child {
+                                background: url(../img/rating/table_row_right.png) 0 0 no-repeat;
+                            }
+
+                            &:nth-child(2) {
+                                text-align: center;
+                                width: 15%;
+                            }
+                        }
+
+                        &.friend {
+                            td.name {
+                                color: #1d3b6f;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
